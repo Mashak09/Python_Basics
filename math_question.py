@@ -15,4 +15,4 @@ def generate_problem():
     operators=random.choice(operators)
     #randomly selects an operator from the list of operators
     expr=str(left)+''+operators+''+str(right)
-    #creates a string that looks like a mathematical expression
+    #creates a string that looks like a mathematical expression ok like 10+20
