@@ -30,7 +30,7 @@ start_time=time.time()
 for i in range(Total_Problems):#calls the loop to generate the problems 10 times
     expr, answer=generate_problem()
     while True:
-        guess=input('problem #'+str(i+1)+':'+expr+'=')
+        guess=input('nindo question:'+expr+'=')
         #prompts the user to solve the problem
         if guess ==str(answer):
             break
@@ -39,3 +39,5 @@ end_time=time.time()
 #stores the time wqhen the user finishes the quiz
 total_time=round(end_time-start_time,2)
 #calculates the total time taken  by the user to solve the problem
+print('-----------------------')
+print('neen itthare time erthe',total_time,'seconds')
