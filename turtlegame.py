@@ -24,3 +24,11 @@ def get_number_of_racers(): #defines a function to get the number of racers
 
 def race(colors):#defines a function called race that takes a list of colors    
     turtle=create_turtles(colors) #calls the create_turtles function to create turtles with the given color
+    while True: 
+        for racer in turtle:
+            distance=random.randint(1,20) #each turtle moves between 1 and 19 pixels together
+            racer.forward(distance) #moves the current turtle forward by the distance calculated above
+
+            x,y=racer.pos() #gets the x,y co-ordinate of the turtle and pos returns a tuple 
+            if y>=height // 2-10
+
