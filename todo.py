@@ -15,3 +15,14 @@ while True:
     if choice == '6':
         print('Bye Bye Mone')
         break
+
+    if choice == '1':
+        if not tasks:#checks if the task 1 list is empty or not
+            print('Tasks ille monu!, First tasks add aak ok')
+        else:
+            print('\n Your Tasks')
+            for i, task in enumerate(tasks,1):  #enumerate() gives us both the index and the task of the item
+            #starting the list from 1 makes it look natural 
+                print(f'{i}.{task}')
+            #f string use akr to disply each task with its number
+
