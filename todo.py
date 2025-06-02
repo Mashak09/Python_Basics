@@ -25,4 +25,18 @@ while True:
             #starting the list from 1 makes it look natural 
                 print(f'{i}.{task}')
             #f string use akr to disply each task with its number
+    elif choice =='2':
+        task=input('nikk endro task benu, Add aak monu')
+        tasks.append(task) #this is a built-in method which adds the task to the end of the tasks list one at a time
+        print(f'task added: {task}')
+    elif choice =='3':
+        if not tasks: #checks if the task is empty
+            print('endum task ille remove akogu mone')
+        else:
+            print('\nYour Tasks:')
+            for i, task in enumerate(tasks,1): #enumerate() endro  akr chenneng nikk tasks along with index thand and starts wioth 1 to look more natural
+                print(f'{i}.{task}') #f string nikk clean formatting aakr like index um pinne task ro ok
+
+
+
 
