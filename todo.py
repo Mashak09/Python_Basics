@@ -11,7 +11,7 @@ tasks=[] # idoru list idl nanga users endro tasks ittra ad nokra
 
 while True:
     show_menu() # we call the function here so that the user can see all the options 
-    choice=input('Yed ayeng oru task choose aak monu (1-6)')
+    choice=input('Yed ayeng oru task choose aak monu (1-6): ')
     if choice == '6':
         print('Bye Bye Mone')
         break
@@ -36,6 +36,16 @@ while True:
             print('\nYour Tasks:')
             for i, task in enumerate(tasks,1): #enumerate() endro  akr chenneng nikk tasks along with index thand and starts wioth 1 to look more natural
                 print(f'{i}.{task}') #f string nikk clean formatting aakr like index um pinne task ro ok
+
+            try:
+                task_num=int(input('nikk yed task remove akonu adro number id: ')) #ask the user to input the task they want to remove
+                if 1<= task_num <= len(tasks): #the task should be inside the number of tasks
+                    removed=tasks.pop(task_num-1) #removes the task using pop 
+                    print(f'task removed :{removed}')
+                else:
+                    print('task number invalid id')
+            except ValueError: #valueerror chenneng neen number enter akonu instead of text like abc appa id error kaatr
+                print('nikk number idogu chenno naan ')
 
 
 
