@@ -46,6 +46,12 @@ while True:
                     print('task number invalid id')
             except ValueError: #valueerror chenneng neen number enter akonu instead of text like abc appa id error kaatr
                 print('nikk number idogu chenno naan ')
+    elif choice ==4:
+        with open ("task.txt",'w') as file: #opens and creates task.txt as a written file
+            for task in tasks: 
+                file.write(task+ '\ n') #writes each task  as a newline character
+                print("Tasks have been saved to 'tasks.txt'")
+
 
 
 
