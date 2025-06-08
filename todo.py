@@ -46,11 +46,19 @@ while True:
                     print('task number invalid id')
             except ValueError: #valueerror chenneng neen number enter akonu instead of text like abc appa id error kaatr
                 print('nikk number idogu chenno naan ')
-    elif choice ==4:
-        with open ("task.txt",'w') as file: #opens and creates task.txt as a written file
+    elif choice =='4':
+        with open("task.txt",'w') as file: #opens and creates task.txt as a written file
             for task in tasks: 
                 file.write(task+ '\ n') #writes each task  as a newline character
                 print("Tasks have been saved to 'tasks.txt'")
+
+    elif choice == '5':
+        try:
+            with open("task.tx",'r') as file: #opens the file in read mode
+                tasks=[line.strip() for line in file.readlines()] #This is a list comprehension. It goes through each line in the file and removes the \n at the end using .strip().
+            print('Tasks Loaded from tasks.txt')
+        except FileNotFoundError:
+            print('task.txt ude ille mone ad first save ak')
 
 
 
