@@ -7,7 +7,7 @@ def show_menu(): # functions are used to organise code so that it can be reused 
     print('5.Load Tasks')
     print('6.Exit')
 
-tasks=[] # idoru list idl nanga users endro tasks ittra ad nokra 
+tasks = [{"text": "Buy milk", "done": False}, {"text": "Call Ammi", "done": True}] # idoru dictionary idl nanga users endro tasks ittra ad nokra 
 
 while True:
     show_menu() # we call the function here so that the user can see all the options 
@@ -25,17 +25,20 @@ while True:
             #starting the list from 1 makes it look natural 
                 print(f'{i}.{task}')
             #f string use akr to disply each task with its number
+
     elif choice =='2':
         task=input('nikk endro task benu, Add aak monu')
-        tasks.append(task) #this is a built-in method which adds the task to the end of the tasks list one at a time
-        print(f'task added: {task}')
+        tasks.append({"text": task_text, "done": False}) #this is a built-in method which adds the task to the end of the tasks list one at a time
+        print(f'task added: {task_text}')
+
     elif choice =='3':
         if not tasks: #checks if the task is empty
             print('endum task ille remove akogu mone')
         else:
             print('\nYour Tasks:')
             for i, task in enumerate(tasks,1): #enumerate() endro  akr chenneng nikk tasks along with index thand and starts wioth 1 to look more natural
-                print(f'{i}.{task}') #f string nikk clean formatting aakr like index um pinne task ro ok
+                status = "✅" if task["done"] else "❌"
+                print(f'{i}. [{status}] {task["text"]}') #f string nikk clean formatting aakr like index um pinne task ro ok
 
             try:
                 task_num=int(input('nikk yed task remove akonu adro number id: ')) #ask the user to input the task they want to remove
@@ -46,6 +49,7 @@ while True:
                     print('task number invalid id')
             except ValueError: #valueerror chenneng neen number enter akonu instead of text like abc appa id error kaatr
                 print('nikk number idogu chenno naan ')
+
     elif choice =='4':
         with open("task.txt",'w') as file: #opens and creates task.txt as a written file
             for task in tasks: 
