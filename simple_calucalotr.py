@@ -24,7 +24,14 @@ elif operation == '/':
         print('divide by 0 awulle monu')
         exit()
 else:
-    print('nen ewndro operation itro la')
+    print('nen endro operation itro la')
     exit
+
+print(f"result is:{result}") #gives  the result in a formatted way
+# now we ask the user if he wants to calculöate again
+choice=input('Do you want to calculate again?(Yes/No): ').lower()
+if choice != 'yes':
+    print('okay bro! Bye Bye')
+    exit()
 
 
